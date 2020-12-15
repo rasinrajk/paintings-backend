@@ -48,6 +48,7 @@ functions:
       - http:
           path: paintings
           method: post
+          cors: true
           authorizer: aws_iam
   get:
     # Defines an HTTP API endpoint that calls the main function in get.js
@@ -58,6 +59,7 @@ functions:
       - http:
           path: paintings/{id}
           method: get
+          cors: true
           authorizer: aws_iam  
   list:
     # Defines an HTTP API endpoint that calls the main function in list.js
@@ -68,6 +70,7 @@ functions:
       - http:
           path: paintings
           method: get
+          cors: true
           authorizer: aws_iam
   update:
     # Defines an HTTP API endpoint that calls the main function in update.js
@@ -78,6 +81,7 @@ functions:
       - http:
           path: paintings/{id}
           method: put
+          cors: true
           authorizer: aws_iam
   delete:
     # Defines an HTTP API endpoint that calls the main function in delete.js
@@ -98,4 +102,9 @@ functions:
       - http:
           path: billing
           method: post
+          cors: true
           authorizer: aws_iam
+# Create our resources with separate CloudFormation templates
+resources:
+  # API Gateway Errors
+  - ${file(resources/api-gateway-errors.yml)}
