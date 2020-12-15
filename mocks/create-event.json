@@ -1,3 +1,8 @@
 {
-  "body": "{\"content\":\"hello painting world\",\"attachment\":\"painting.jpg\"}"
+  "body": "{\"content\":\"hello world\",\"attachment\":\"hello.jpg\"}",
+  "requestContext": {
+    "identity": {
+      "cognitoIdentityId": "USER-SUB-1234"
+    }
+  }
 }
